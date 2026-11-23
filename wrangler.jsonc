@@ -1,0 +1,11 @@
+// argusinstinct.xyz: the Argus product page (web/, Vite + three.js), built to dist/ and served as Worker static assets.
+//   cd web && bun run deploy
+{
+  "name": "argusinstinct",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist", "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" },
+  "routes": [
+    { "pattern": "argusinstinct.xyz", "custom_domain": true },
+    { "pattern": "www.argusinstinct.xyz", "custom_domain": true }
+  ]
+}

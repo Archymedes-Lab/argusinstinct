@@ -1,0 +1,20 @@
+{
+  "name": "argusinstinct",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && cd .. && npx wrangler@4 deploy"
+  },
+  "dependencies": {
+    "lenis": "1.3.4",
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.185.0",
+    "typescript": "5.9.3",
+    "vite": "7.1.12"
+  }
+}

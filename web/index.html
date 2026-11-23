@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Argus Instinct · Local security monitor for Windows PCs and Linux servers</title>
+<meta name="description" content="Argus watches what runs on a Windows PC or a Linux server: processes, autostarts, accounts, credentials left in plain text, logins from new networks. It keeps the evidence on the machine and says what it cannot see. Desktop $79 per year; servers $50 per year.">
+<meta name="keywords" content="Linux server monitoring, process monitoring, host intrusion detection, security audit Linux server, Windows WSL2 security, AI coding agent security, plain text credentials scanner, SSH login monitoring, file integrity">
+<meta name="author" content="Archymedes">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://argusinstinct.xyz/">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0c" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Argus Instinct">
+<meta property="og:title" content="Argus Instinct · Know what runs on your machine">
+<meta property="og:description" content="A local security monitor for Windows PCs and Linux servers: processes, autostarts, accounts, plain-text credentials and what changed, with the evidence kept on the machine.">
+<meta property="og:url" content="https://argusinstinct.xyz/">
+<meta property="og:image" content="https://argusinstinct.xyz/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Argus Instinct: know what runs on your machine">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Argus Instinct · Know what runs on your machine">
+<meta name="twitter:description" content="A local security monitor for Windows PCs and Linux servers. Desktop $79 per year; servers $50 per year.">
+<meta name="twitter:image" content="https://argusinstinct.xyz/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/art/watcher.webp" fetchpriority="low">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.archymedes.xyz/#org",
+      "name": "Archymedes",
+      "url": "https://www.archymedes.xyz/",
+      "logo": "https://argusinstinct.xyz/icon-512.png",
+      "email": "chris@archymedes.xyz",
+      "address": { "@type": "PostalAddress", "addressLocality": "Kigali", "addressCountry": "RW" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://argusinstinct.xyz/#site",
+      "url": "https://argusinstinct.xyz/",
+      "name": "Argus Instinct",
+      "publisher": { "@id": "https://www.archymedes.xyz/#org" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://argusinstinct.xyz/#app",
+      "name": "Argus",
+      "alternateName": ["Argus Instinct", "ARGUS-INSTINCT", "ARGUS-1"],
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Windows 10, Windows 11 (64-bit, WSL2), Linux (systemd)",
+      "description": "A local security monitor that watches what runs on a Windows PC or a Linux server, keeps the evidence on the machine, and reports what it cannot see.",
+      "url": "https://argusinstinct.xyz/",
+      "downloadUrl": "https://www.archymedes.xyz/en/solutions/argus/#download",
+      "softwareHelp": "https://www.archymedes.xyz/en/docs/argus/",
+      "publisher": { "@id": "https://www.archymedes.xyz/#org" },
+      "featureList": [
+        "Process monitoring with parent and child relationships",
+        "Autostarts, services, scheduled tasks and cron audit",
+        "Plain-text credential discovery",
+        "SSH key, sudo rule and login audit on Linux servers",
+        "Local evidence ledger with reversible containment and undo",
+        "Reports its own blind spots"
+      ],
+      "offers": [
+        { "@type": "Offer", "name": "Argus Desktop (Windows, Linux and other)", "price": "79", "priceCurrency": "USD", "description": "Per year.", "url": "https://argusinstinct.xyz/#pricing" },
+        { "@type": "Offer", "name": "Argus Server", "price": "50", "priceCurrency": "USD", "description": "Per server, per year.", "url": "https://argusinstinct.xyz/#pricing" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does Argus send my data anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No telemetry. Findings stay on the machine and the dashboard listens only locally. Argus fetches public threat feeds and timestamps, and nothing fetched is ever executed." } },
+        { "@type": "Question", "name": "Which systems does Argus run on?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Windows 10 and 11 (64-bit) with WSL2, and Linux servers with systemd." } },
+        { "@type": "Question", "name": "What does Argus cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Argus Desktop is $79 per year. Argus Server is $50 per server, per year. Pay by card (Stripe) or mobile money (Paypack)." } },
+        { "@type": "Question", "name": "Does Argus replace endpoint security?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It is not a replacement for enterprise endpoint security. Someone with full administrator or kernel control can falsify what any local tool sees, and Argus says so." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="/" aria-label="Argus Instinct, home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="currentColor"/><circle cx="32" cy="32" r="13" fill="none" stroke="var(--canvas)" stroke-width="3"/><circle cx="32" cy="32" r="4.5" fill="var(--canvas)"/></svg>
+      <span>Argus <em>Instinct</em></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#watch">Monitoring</a>
+      <a href="#processes">Processes</a>
+      <a href="#data">Data</a>
+      <a href="#servers">Servers</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <a class="btn btn--solid nav__cta" href="#get">Get Argus</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ── 00 Hero: pinned; the dome comes closer as you scroll ───────── -->
+  <section id="hero" class="hero" aria-labelledby="hero-title">
+    <div class="hero__pin">
+      <div class="wrap hero__frame">
+        <div class="hero__index">
+          <span class="eyebrow eyebrow--ink"><span class="num">00</span>Argus Instinct</span>
+          <span class="eyebrow hero__index-right">Local security monitor · Windows PCs and Linux servers</span>
+        </div>
+
+        <h1 id="hero-title" class="hero__title"><span class="line"><span>Know what runs</span></span><span class="line"><span>on your <em>machine.</em></span></span></h1>
+
+        <div class="hero__body">
+          <div class="hero__copy">
+            <p class="lede">Agents, package scripts and servers run code with your credentials. Argus watches the machine, keeps the evidence on it, and says plainly what it cannot see.</p>
+            <div class="actions">
+              <a class="btn btn--solid" href="#get">Download <span aria-hidden="true">→</span></a>
+              <a class="btn" href="#pricing">Pricing · $79 desktop · $50 server</a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="hero__rail" aria-label="What Argus does">
+          <li><span class="num">01</span><b>Observes</b><span>processes, autostarts, accounts</span></li>
+          <li><span class="num">02</span><b>Records</b><span>evidence stays on the machine</span></li>
+          <li><span class="num">03</span><b>Asks</b><span>before anything bigger than undo</span></li>
+          <li><span class="num">04</span><b>Admits</b><span>what it cannot see</span></li>
+        </ul>
+      </div>
+      <div class="hero__stage" id="stage-hero"></div>
+    </div>
+  </section>
+
+  <!-- ── 01 Monitoring ─────────────────────────────────────────────── -->
+  <section id="watch" class="chapter wrap" aria-labelledby="watch-title">
+    <div class="chapter__text" data-reveal>
+      <p class="eyebrow"><span class="num">01</span> Monitoring</p>
+      <h2 id="watch-title" class="h2">A timeline,<br>not a verdict.</h2>
+      <p class="lede lede--sm">Processes, autostarts, accounts, network activity, sensors and firewall state are observed and joined into one timeline, so every change has a before and an after. What is recorded comes first; what responds to it comes second.</p>
+      <ul class="ticks">
+        <li>Evidence before response</li>
+        <li>Absence is logged as <em>not observed</em>, never as fixed</li>
+        <li>Public threat feeds can only add suspicion, never clear it</li>
+      </ul>
+    </div>
+    <figure class="ledger" aria-label="An example of the Argus timeline">
+      <figcaption class="ledger__head"><span>argus timeline --since 1h</span><span class="ledger__live"><i></i>observing</span></figcaption>
+      <ol class="ledger__rows">
+        <li><time>09:41:07</time><b class="t-obs">observed</b><span>node · spawned by <code>code</code> in ~/work/api</span></li>
+        <li><time>09:41:09</time><b class="t-obs">observed</b><span>postinstall script ran <code>curl</code> to an unseen host</span></li>
+        <li><time>09:41:10</time><b class="t-warn">flagged</b><span>new autostart: <code>~/.config/systemd/user/upd.service</code></span></li>
+        <li><time>09:41:10</time><b class="t-ask">asked you</b><span>disable it? reversible · undo kept in the ledger</span></li>
+        <li><time>09:52:33</time><b class="t-obs">observed</b><span>ssh login from a network not seen before</span></li>
+        <li><time>10:03:58</time><b class="t-gap">cannot see</b><span>kernel-level hiding needs the optional sensor</span></li>
+      </ol>
+      <p class="ledger__note">Example of the timeline format. Every line keeps its evidence.</p>
+    </figure>
+  </section>
+
+  <!-- ── Plate: the watcher ────────────────────────────────────────── -->
+  <section class="plate" data-parallax aria-label="Illustration">
+    <div class="plate__img" style="background-image:url(/art/watcher.webp)" role="img" aria-label="A figure reads a star chart at night, a lighthouse beam behind them"></div>
+    <div class="wrap plate__text">
+      <p class="plate__quote">Watching is not<br>the same as <em>trusting.</em></p>
+    </div>
+  </section>
+
+  <!-- ── 02 Processes: pinned 3D, the tree grows as you scroll ─────── -->
+  <section id="processes" class="pinned" aria-labelledby="proc-title">
+    <div class="pinned__sticky">
+      <div class="wrap pinned__grid">
+        <div class="pinned__text" data-reveal>
+          <p class="eyebrow"><span class="num">02</span> Processes</p>
+          <h2 id="proc-title" class="h2">What runs,<br>and <em>why</em> it runs.</h2>
+          <p class="lede lede--sm">Argus shows what runs because you opened an editor, a repository or a shell, which is exactly where a coding agent works. Follow a branch down and you see who started what.</p>
+          <ol class="beats">
+            <li style="--a:0.05;--b:0.55"><b>shell → editor → node</b> the tree as it was started</li>
+            <li style="--a:0.55;--b:0.72"><b>npm → postinstall</b> a script reaches for a host never seen</li>
+            <li style="--a:0.72;--b:0.85"><b>flagged</b> the reticle settles on it, with the evidence</li>
+            <li style="--a:0.85;--b:1.1"><b>held</b> the connection waits for you; undo is kept</li>
+          </ol>
+        </div>
+        <div class="pinned__stage" id="stage-tree"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ask it (black band) ───────────────────────────────────────── -->
+  <section class="band" aria-labelledby="ask-title">
+    <div class="wrap band__in">
+      <div data-reveal>
+        <p class="eyebrow eyebrow--onblack">Ask it a question</p>
+        <h2 id="ask-title" class="h2 h2--onblack">Each audit answers<br>one plain question.</h2>
+        <p class="band__lede">No dashboard to decode. You ask, it answers with the evidence behind it, and with what it could not check.</p>
+      </div>
+      <dl class="cmds" data-reveal>
+        <div><dt>argus spy</dt><dd>Is anything monitoring me? Who used the microphone or camera?</dd></div>
+        <div><dt>argus hidden</dt><dd>Is anything hiding from the normal process list?</dd></div>
+        <div><dt>argus toolchain</dt><dd>What runs because I opened an editor, a repo or a shell?</dd></div>
+        <div><dt>argus secrets</dt><dd>Which credentials are sitting in plain text on this disk?</dd></div>
+        <div><dt>argus evasion</dt><dd>Is anything in a position to lie to these checks?</dd></div>
+        <div><dt>argus gaps</dt><dd>What attacker tradecraft do I not cover yet?</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── 03 Data: pinned 3D, the scan finds keys; nothing leaves ───── -->
+  <section id="data" class="pinned pinned--flip" aria-labelledby="data-title">
+    <div class="pinned__sticky">
+      <div class="wrap pinned__grid">
+        <div class="pinned__stage" id="stage-vault"></div>
+        <div class="pinned__text" data-reveal>
+          <p class="eyebrow"><span class="num">03</span> Data protection</p>
+          <h2 id="data-title" class="h2">Your data stays<br>where it is.</h2>
+          <p class="lede lede--sm">Argus finds credentials sitting in plain text on the disk and shows you where they are. Its own findings stay on the machine: the dashboard listens only locally and there is no telemetry.</p>
+          <ol class="beats">
+            <li style="--a:0.05;--b:0.4"><b>scan</b> passes down through the disk</li>
+            <li style="--a:0.4;--b:0.75"><b>found</b> SSH keys, tokens and passwords left in plain text, lifted out so you can see them</li>
+            <li style="--a:0.75;--b:1.1"><b>contained</b> nothing crosses the boundary: no telemetry, findings stay local</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ladder ────────────────────────────────────────────────────── -->
+  <section class="ladder wrap" aria-labelledby="ladder-title">
+    <div data-reveal>
+      <p class="eyebrow">How it responds</p>
+      <h2 id="ladder-title" class="h2">Watch, ask, propose, act.</h2>
+    </div>
+    <ol class="steps" data-reveal>
+      <li><span class="num">01</span><h3>Observe</h3><p>Processes, autostarts, accounts, network activity, sensors and firewall state.</p></li>
+      <li><span class="num">02</span><h3>Correlate</h3><p>Events are joined into a timeline so a change has a before and an after.</p></li>
+      <li><span class="num">03</span><h3>Explain</h3><p>Findings come with the evidence behind them and with what could not be seen.</p></li>
+      <li><span class="num">04</span><h3>Respond</h3><p>Reversible containment only when you switch it on. Anything more waits for you.</p></li>
+    </ol>
+  </section>
+
+  <!-- ── Plate: the monolith ───────────────────────────────────────── -->
+  <section class="plate plate--short" data-parallax aria-label="Illustration">
+    <div class="plate__img" style="background-image:url(/art/monolith.webp)" role="img" aria-label="A dark stone cube with the Archymedes mark on volcanic rock"></div>
+    <div class="wrap plate__text plate__text--right">
+      <div class="figures">
+        <div><span class="fig" data-count="72">0</span><span class="eyebrow eyebrow--onblack">audits on a Windows + WSL2 PC</span></div>
+        <div><span class="fig" data-count="49">0</span><span class="eyebrow eyebrow--onblack">audits on a plain Linux server</span></div>
+        <div><span class="fig">0</span><span class="eyebrow eyebrow--onblack">bytes of telemetry by default</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 Servers: pinned 3D, the survey passes down the rack ────── -->
+  <section id="servers" class="pinned" aria-labelledby="servers-title">
+    <div class="pinned__sticky">
+      <div class="wrap pinned__grid">
+        <div class="pinned__text" data-reveal>
+          <p class="eyebrow"><span class="num">04</span> The server edition</p>
+          <h2 id="servers-title" class="h2">On Linux, it runs as its own unprivileged account.</h2>
+          <p class="lede lede--sm">Read-only capabilities, systemd units, nothing to configure to start. It audits SSH keys and configuration, sudo rules, systemd units, cron, password-guessing in the auth log, web shells in document roots, container exposure and kernel-level hiding.</p>
+          <div class="term" role="group" aria-label="Install on a Linux server">
+            <div class="term__bar"><span>Any systemd distribution</span><button class="copy" data-copy="#install-cmd" type="button">Copy</button></div>
+<pre id="install-cmd"><code>curl -fsSLO https://www.archymedes.xyz/downloads/argus/argus-server-linux-x86_64.tar.gz
+tar -xzf argus-server-linux-x86_64.tar.gz
+sudo ./argus-server/install.sh</code></pre>
+            <p class="term__note">Signed releases. <a href="https://www.archymedes.xyz/en/docs/argus/">Verify the download</a> against SHA256SUMS first.</p>
+          </div>
+        </div>
+        <div class="pinned__stage" id="stage-rack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Get ───────────────────────────────────────────────────────── -->
+  <section id="get" class="get wrap" aria-labelledby="get-title">
+    <div data-reveal>
+      <p class="eyebrow">Get Argus</p>
+      <h2 id="get-title" class="h2">Two editions, one name.</h2>
+    </div>
+    <div class="cards" data-reveal>
+      <article class="card">
+        <p class="eyebrow">Desktop</p>
+        <h3>Windows 10 and 11 with WSL2</h3>
+        <p>Audits the Windows host and the WSL2 side, and names its own blind spots. </p>
+        <a class="btn btn--solid" href="https://www.archymedes.xyz/en/solutions/argus/#download">Download for Windows</a>
+      </article>
+      <article class="card">
+        <p class="eyebrow">Server</p>
+        <h3>Linux servers with systemd</h3>
+        <p>A <code>.deb</code> for Debian and Ubuntu, or a tar.gz for any systemd distribution. </p>
+        <a class="btn btn--solid" href="https://www.archymedes.xyz/en/solutions/argus/#download">Download for Linux</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── Pricing ───────────────────────────────────────────────────── -->
+  <section id="pricing" class="pricing wrap" aria-labelledby="pricing-title">
+    <div data-reveal>
+      <p class="eyebrow">Pricing</p>
+      <h2 id="pricing-title" class="h2">Two plans.<br>One year at a time.</h2>
+    </div>
+    <div class="plans" data-reveal>
+      <article class="plan plan--lead">
+        <h3>Desktop</h3>
+        <p class="price"><strong>$79</strong><span>per year</span></p>
+        <p>Windows, Linux and other desktop systems.</p>
+        <a class="btn btn--solid" href="https://www.archymedes.xyz/en/solutions/argus/#pricing">Get Desktop</a>
+      </article>
+      <article class="plan">
+        <h3>Server</h3>
+        <p class="price"><strong>$50</strong><span>per server, per year</span></p>
+        <p>Linux servers with systemd.</p>
+        <a class="btn" href="https://www.archymedes.xyz/en/solutions/argus/#pricing">Get Server</a>
+      </article>
+    </div>
+    <p class="fine">Pay by card (Stripe) or mobile money (Paypack). Argus never sees your payment details.</p>
+  </section>
+
+  <!-- ── FAQ (also in the structured data) ─────────────────────────── -->
+  <section class="faq wrap" aria-labelledby="faq-title">
+    <div data-reveal>
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-title" class="h2">Said plainly, up front.</h2>
+    </div>
+    <div class="faq__list" data-reveal>
+      <details><summary>Does Argus send my data anywhere?</summary><p>No telemetry. Findings stay on the machine and the dashboard listens only locally. Argus fetches public threat feeds and timestamps, and nothing fetched is ever executed.</p></details>
+      <details><summary>Which systems does it run on?</summary><p>Windows 10 and 11 (64-bit) with WSL2, and Linux servers with systemd.</p></details>
+      <details><summary>What does it cost?</summary><p>Argus Desktop is $79 per year. Argus Server is $50 per server, per year. Pay by card (Stripe) or mobile money (Paypack).</p></details>
+      <details><summary>Does it replace endpoint security?</summary><p>No. It is not a replacement for enterprise endpoint security. Someone with full administrator or kernel control can falsify what any local tool sees, and Argus says so instead of hiding it.</p></details>
+      <details><summary>What can it not see?</summary><p>It compares current attacker techniques with what its own sensors cover and reports the gaps as a work list: <code>argus gaps</code>.</p></details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div>
+      <p class="footer__brand">Argus <em>Instinct</em></p>
+      <p class="footer__tag">By Archymedes, an AI lab in Kigali.</p>
+    </div>
+    <nav aria-label="More" class="footer__cols">
+      <a href="https://www.archymedes.xyz/en/docs/argus/">Documentation</a>
+      <a href="https://www.archymedes.xyz/en/solutions/argus/">Argus on archymedes.xyz</a>
+      <a href="https://www.archymedes.xyz/">Archymedes</a>
+      <a href="https://oriondelphi.xyz/">Orion, the decision app</a>
+      <a href="mailto:chris@archymedes.xyz">chris@archymedes.xyz</a>
+    </nav>
+  </div>
+  <div class="footer__giant" aria-hidden="true">ARGUS</div>
+</footer>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

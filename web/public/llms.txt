@@ -1,0 +1,13 @@
+# Argus Instinct
+
+> Argus is a local security monitor for Windows 10/11 PCs (with WSL2) and Linux servers with systemd, made by Archymedes (Kigali). It watches what runs on the machine (processes and who started them, autostarts, services, cron, accounts, SSH keys and logins, credentials left in plain text), keeps the evidence on the machine, and reports what it cannot see. No telemetry.
+
+- Argus Desktop (Windows, Linux and other): $79 per year.
+- Argus Server (Linux servers): $50 per server, per year.
+- Not a replacement for enterprise endpoint security.
+
+## Links
+- [Download](https://www.archymedes.xyz/en/solutions/argus/#download)
+- [Documentation](https://www.archymedes.xyz/en/docs/argus/)
+- [Pricing](https://argusinstinct.xyz/#pricing)
+- Contact: chris@archymedes.xyz
